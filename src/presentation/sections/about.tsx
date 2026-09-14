@@ -15,7 +15,7 @@ export function About() {
       <Container>
         <SectionHeading
           eyebrow={locale === "es" ? "Sobre mí" : "About"}
-          title={locale === "es" ? "De la arquitectura al detalle de UX" : "From architecture down to the UX detail"}
+          title={locale === "es" ? "Mi experencia" : "My experience"}
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
