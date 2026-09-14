@@ -2,12 +2,13 @@
 
 import { Mail, ArrowUpRight, FileDown } from "lucide-react";
 import { usePortfolioContent } from "@/presentation/providers/locale-provider";
+import { trackEvent } from "@/infrastructure/analytics/firebase-client";
 import { Container } from "@/presentation/components/ui/container";
 import { Reveal } from "@/presentation/components/ui/reveal";
 import { Button } from "@/presentation/components/ui/button";
-import { GithubIcon, LinkedinIcon } from "@/presentation/components/ui/icons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/presentation/components/ui/icons";
 
-const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, email: Mail };
+const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, whatsapp: WhatsappIcon, email: Mail };
 
 export function Contact() {
   const { content, locale } = usePortfolioContent();
@@ -41,11 +42,19 @@ export function Contact() {
             </p>
 
             <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3">
-              <Button href={`mailto:${profile.socialLinks.find((s) => s.platform === "email")?.label}`}>
+              <Button
+                href={`mailto:${profile.socialLinks.find((s) => s.platform === "email")?.label}`}
+                onClick={() => trackEvent("contact_email_click", { locale, placement: "contact_section" })}
+              >
                 <Mail size={15} />
                 {locale === "es" ? "Escribime" : "Email me"}
               </Button>
-              <Button href={profile.resumeHref} download variant="secondary">
+              <Button
+                href={profile.resumeHref}
+                download
+                variant="secondary"
+                onClick={() => trackEvent("download_cv", { locale, placement: "contact_section" })}
+              >
                 <FileDown size={15} />
                 {content.nav.resumeCta}
               </Button>
@@ -62,6 +71,7 @@ export function Contact() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() => trackEvent("social_link_click", { locale, platform: link.platform })}
                       className="inline-flex items-center gap-1.5 rounded-full border border-border-strong bg-surface px-4 py-2 text-xs text-muted transition-colors hover:text-foreground"
                     >
                       <Icon size={13} />

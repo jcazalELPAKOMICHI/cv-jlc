@@ -1,4 +1,4 @@
-export type SocialPlatform = "github" | "linkedin" | "email";
+export type SocialPlatform = "github" | "linkedin" | "whatsapp" | "email";
 
 /**
  * A single external / contact link shown in the UI (navbar, hero, footer).

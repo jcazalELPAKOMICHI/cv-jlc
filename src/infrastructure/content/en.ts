@@ -7,6 +7,7 @@ export const enContent: PortfolioContent = {
       { id: "about", label: "About" },
       { id: "experience", label: "Experience" },
       { id: "projects", label: "Projects" },
+      { id: "highlights", label: "Highlights" },
       { id: "skills", label: "Stack" },
       { id: "contact", label: "Contact" },
     ],
@@ -26,6 +27,7 @@ export const enContent: PortfolioContent = {
     socialLinks: [
       { platform: "email", label: "josecazal1991@gmail.com", href: "mailto:josecazal1991@gmail.com" },
       { platform: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/josecazal" },
+      { platform: "whatsapp", label: "WhatsApp", href: "https://wa.me/595972257064" },
       { platform: "github", label: "GitHub", href: "https://github.com/jcazalELPAKOMICHI" },
     ],
     stats: [
@@ -200,6 +202,38 @@ export const enContent: PortfolioContent = {
         "Maintained BBVA's retail app (now GNB) and built EMA, the business banking app, from scratch in Kotlin.",
       tags: ["Kotlin", "Android", "Digital banking"],
       featured: false,
+    },
+  ],
+  highlights: [
+    {
+      id: "albirroja-mode",
+      title: "Albirroja Mode: gamifying without breaking a single rule",
+      context: "Ética — Eko",
+      period: "2026",
+      summary:
+        "When Paraguay qualified for the World Cup after 16 years, Benjamín Blanco and I set out to make Eko share that excitement without using a single word or color restricted by the tournament's organizers. We built the AppBirroja theme: our own brand red combined with the app's light mode, toggled by a button with haptic feedback, crowd sound, and animated emoji — fully optional and reversible for the user. A colleague's comment about showing the match info sparked a second iteration: the AppBirroja Card, with the fixture and daily promos, built together with Alejandro Ayala.",
+      metrics: [
+        { value: "250k", label: "customers opted in" },
+        { value: "20k", label: "avg. daily clicks on promo days" },
+      ],
+      tags: ["Flutter", "Theming", "Growth", "UX"],
+      linkedinUrl: "https://lnkd.in/p/driUpNYp",
+      images: ["/images/highlights/albirroja-1.jpg", "/images/highlights/albirroja-2.jpg"],
+    },
+    {
+      id: "dark-mode-eko",
+      title: "Dark Mode for Eko: from a Friday-night idea to production",
+      context: "Ética — Eko",
+      period: "2025",
+      summary:
+        "A large banking app with hardcoded colors across most of its screens and no multi-theme support. One Friday night I built the first fully working version of a complete Dark Mode. The real challenge wasn't technical — it was process: working with Benjamín Blanco, we connected that work to Figma variables and a shared design system so design and engineering spoke the same language when turning each color into code.",
+      metrics: [
+        { value: "1 night", label: "for the first working version" },
+        { value: "100%", label: "screens migrated to theming" },
+      ],
+      tags: ["Flutter", "Design System", "Figma", "Dark Mode"],
+      linkedinUrl: "https://lnkd.in/p/ds5iU5dZ",
+      images: ["/images/highlights/dark-mode-1.jpg", "/images/highlights/dark-mode-2.jpg"],
     },
   ],
   skillGroups: [

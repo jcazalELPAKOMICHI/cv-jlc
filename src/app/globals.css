@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------- */
-/* Design tokens — dark-mode-first, violet accent.                   */
+/* Design tokens — dark-mode-first, electric blue accent.             */
 /* Tailwind v4 reads these via @theme and generates matching          */
 /* utilities: bg-background, text-foreground, bg-surface, etc.        */
 /* ---------------------------------------------------------------- */
@@ -17,10 +17,10 @@
   --muted: #a9a3bd;
   --muted-foreground: #78718f;
 
-  --accent: #8b5cf6;
-  --accent-strong: #a78bfa;
-  --accent-soft: rgba(139, 92, 246, 0.14);
-  --accent-secondary: #e879f9;
+  --accent: #0ea5ff;
+  --accent-strong: #38bdff;
+  --accent-soft: rgba(14, 165, 255, 0.14);
+  --accent-secondary: #22d3ee;
 
   --success: #34d399;
 

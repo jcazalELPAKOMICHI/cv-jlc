@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { usePortfolioContent } from "@/presentation/providers/locale-provider";
+import { trackEvent } from "@/infrastructure/analytics/firebase-client";
 import { Container } from "@/presentation/components/ui/container";
 import { Button } from "@/presentation/components/ui/button";
 
@@ -77,11 +78,15 @@ export function Hero() {
             transition={{ duration: 0.35, delay: 0.2, ease: "easeOut" }}
             className="mt-9 flex flex-wrap items-center gap-3"
           >
-            <Button href="#projects">
+            <Button href="#projects" onClick={() => trackEvent("view_projects_click", { locale, placement: "hero" })}>
               <Sparkles size={15} />
               {locale === "es" ? "Ver proyectos" : "View projects"}
             </Button>
-            <Button href="#contact" variant="secondary">
+            <Button
+              href="#contact"
+              variant="secondary"
+              onClick={() => trackEvent("contact_cta_click", { locale, placement: "hero" })}
+            >
               {locale === "es" ? "Hablemos" : "Let's talk"}
               <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Button>

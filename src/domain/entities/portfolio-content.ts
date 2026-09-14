@@ -2,6 +2,7 @@ import { Profile } from "./profile";
 import { Experience } from "./experience";
 import { SkillGroup } from "./skill";
 import { Project } from "./project";
+import { Highlight } from "./highlight";
 import { Education, Certification, LanguageSkill } from "./education";
 
 /**
@@ -16,6 +17,7 @@ export interface PortfolioContent {
   readonly experiences: Experience[];
   readonly skillGroups: SkillGroup[];
   readonly projects: Project[];
+  readonly highlights: Highlight[];
   readonly education: Education[];
   readonly certifications: Certification[];
   readonly languages: LanguageSkill[];

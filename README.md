@@ -2,7 +2,7 @@
 
 Sitio personal one-page construido con **Next.js 16 (App Router)**, **TypeScript**,
 **Tailwind CSS v4** y **Framer Motion**, organizado con **Clean Architecture**.
-Modo oscuro por diseño, acento violeta, contenido en español e inglés con
+Modo oscuro por diseño, acento azul eléctrico, contenido en español e inglés con
 cambio instantáneo de idioma.
 
 ## Stack
@@ -93,6 +93,45 @@ Pensado para [Vercel](https://vercel.com/) (un click, cero configuración),
 pero al ser un export 100% estático (`prerendered as static content`)
 también funciona en Netlify, GitHub Pages (con `output: "export"`) o
 cualquier hosting estático.
+
+### Variables de entorno en Vercel
+
+El sitio manda eventos a Firebase Analytics (GA4). Las claves viven en
+`.env.local` en tu máquina (no se commitea, mirá `.env.example` para la
+lista completa) — pero Vercel no lee ese archivo, así que en producción
+hay que cargarlas a mano una sola vez:
+
+1. En el dashboard de Vercel, entrá al proyecto → **Settings** →
+   **Environment Variables**.
+2. Cargá las 7 variables que están en `.env.local`
+   (`NEXT_PUBLIC_FIREBASE_*`) con los mismos valores.
+3. Redeployá (o esperá al próximo push) para que el build las tome.
+
+Son valores públicos por diseño (así funciona el SDK web de Firebase),
+no hace falta marcarlos como "sensitive".
+
+## Analytics
+
+Firebase Analytics (GA4) está instalado y manda un `page_view`
+automático al cargar el sitio, más un puñado de eventos personalizados en
+los CTAs más importantes:
+
+- `download_cv` (botón "Descargar CV", en navbar/menú móvil/contacto)
+- `view_projects_click` y `contact_cta_click` (botones del hero)
+- `contact_email_click` y `social_link_click` (sección de contacto)
+- `highlight_post_click` (link "Ver publicación" en Destacados)
+
+La lógica vive en `src/infrastructure/analytics/firebase-client.ts`
+(capa de infraestructura — el resto del código solo llama a
+`trackEvent(nombre, params)`). Para agregar un evento nuevo en algún
+otro botón o link, importá `trackEvent` y llamalo en su `onClick`.
+
+Los eventos se ven en Firebase Console → Analytics → Realtime (o en
+GA4 → Informes en tiempo real), tardan unos minutos en aparecer en los
+informes estándar. Si tenés un bloqueador de anuncios activo en el
+navegador, es normal que no se registren — muchos bloquean
+`google-analytics.com` por defecto; no afecta a los visitantes reales
+del sitio.
 
 ## Notas de diseño
 

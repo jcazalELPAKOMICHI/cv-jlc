@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Languages } from "lucide-react";
 import { usePortfolioContent } from "@/presentation/providers/locale-provider";
+import { trackEvent } from "@/infrastructure/analytics/firebase-client";
 import { useActiveSection } from "@/presentation/hooks/use-active-section";
 import { Container } from "@/presentation/components/ui/container";
 import { Button } from "@/presentation/components/ui/button";
@@ -75,7 +76,13 @@ export function Navbar() {
               <Languages size={14} />
               {locale}
             </button>
-            <Button href={content.profile.resumeHref} download size="sm" className="hidden sm:inline-flex">
+            <Button
+              href={content.profile.resumeHref}
+              download
+              size="sm"
+              className="hidden sm:inline-flex"
+              onClick={() => trackEvent("download_cv", { locale, placement: "navbar" })}
+            >
               {content.nav.resumeCta}
             </Button>
             <button
@@ -113,7 +120,13 @@ export function Navbar() {
                     {link.label}
                   </a>
                 ))}
-                <Button href={content.profile.resumeHref} download size="sm" className="mt-1">
+                <Button
+                  href={content.profile.resumeHref}
+                  download
+                  size="sm"
+                  className="mt-1"
+                  onClick={() => trackEvent("download_cv", { locale, placement: "mobile_menu" })}
+                >
                   {content.nav.resumeCta}
                 </Button>
               </div>

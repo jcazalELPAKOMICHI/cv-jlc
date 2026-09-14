@@ -15,7 +15,7 @@ const base =
 
 const variants = {
   primary:
-    "bg-accent text-white shadow-[0_0_0_1px_rgba(139,92,246,0.4),0_8px_24px_-8px_rgba(139,92,246,0.65)] hover:bg-accent-strong hover:shadow-[0_0_0_1px_rgba(167,139,250,0.5),0_10px_30px_-6px_rgba(167,139,250,0.75)] active:scale-[0.98]",
+    "bg-accent text-white shadow-[0_0_0_1px_rgba(14,165,255,0.4),0_8px_24px_-8px_rgba(14,165,255,0.65)] hover:bg-accent-strong hover:shadow-[0_0_0_1px_rgba(56,189,255,0.5),0_10px_30px_-6px_rgba(56,189,255,0.75)] active:scale-[0.98]",
   secondary:
     "border border-border-strong bg-surface text-foreground hover:border-accent-strong/60 hover:bg-surface-hover active:scale-[0.98]",
   ghost: "text-muted hover:text-foreground",

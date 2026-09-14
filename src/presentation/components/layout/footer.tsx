@@ -3,9 +3,9 @@
 import { Mail, ArrowUpRight } from "lucide-react";
 import { usePortfolioContent } from "@/presentation/providers/locale-provider";
 import { Container } from "@/presentation/components/ui/container";
-import { GithubIcon, LinkedinIcon } from "@/presentation/components/ui/icons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/presentation/components/ui/icons";
 
-const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, email: Mail };
+const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, whatsapp: WhatsappIcon, email: Mail };
 
 export function Footer() {
   const { content, locale } = usePortfolioContent();
