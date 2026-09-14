@@ -1,0 +1,9 @@
+LiberationSans-Regular.ttf / LiberationSans-Bold.ttf
+Liberation Fonts, © Red Hat, Inc. — SIL Open Font License 1.1
+(https://github.com/liberationfonts/liberation-fonts)
+
+Bundled here so the generated Open Graph / Twitter share image
+(src/infrastructure/og/site-og-image.tsx) has a real typeface to embed —
+next/og's ImageResponse (Satori) needs a local ttf/otf/woff file, and
+this project intentionally avoids fetching fonts over the network at
+build or runtime (see the comment in globals.css).

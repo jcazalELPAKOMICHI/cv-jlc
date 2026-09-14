@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://josecazal.dev";
+// Matches the live Vercel deployment — must stay in sync with whatever
+// domain actually serves the site, since it's used to build the
+// absolute og:image URL that link previews (Slack, WhatsApp, X...) fetch.
+const SITE_URL = "https://cv-jlc.vercel.app";
 const TITLE = "José Luis Cazal — Frontend & Mobile Architect";
 const DESCRIPTION =
   "Arquitecto Frontend & Mobile con 10+ años de experiencia en Flutter y Clean Architecture, liderando productos de banca y fintech.";

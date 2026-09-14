@@ -60,7 +60,7 @@ export function Contact() {
               </Button>
             </div>
 
-            <div className="relative mt-10 flex items-center justify-center gap-3">
+            <div className="relative mt-10 flex flex-wrap items-center justify-center gap-3">
               {profile.socialLinks
                 .filter((l) => l.platform !== "email")
                 .map((link) => {
