@@ -38,7 +38,9 @@ export function Navbar() {
         <div
           className={cn(
             "flex items-center justify-between rounded-2xl border px-4 py-2.5 transition-all duration-300",
-            scrolled ? "glass-panel border-border shadow-lg shadow-black/20" : "border-transparent"
+            scrolled
+              ? "border-border bg-background/90 shadow-lg shadow-black/30 backdrop-blur-xl"
+              : "border-transparent"
           )}
         >
           <a href="#hero" className="font-mono text-sm font-semibold tracking-tight text-foreground">
@@ -106,7 +108,7 @@ export function Navbar() {
             className="md:hidden"
           >
             <Container className="mt-2">
-              <div className="glass-panel flex flex-col gap-1 rounded-2xl border border-border p-3">
+              <div className="flex flex-col gap-1 rounded-2xl border border-border bg-background/95 p-3 shadow-lg shadow-black/30 backdrop-blur-xl">
                 {content.nav.links.map((link) => (
                   <a
                     key={link.id}
