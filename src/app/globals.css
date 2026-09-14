@@ -148,14 +148,6 @@ section[id] {
   color: transparent;
 }
 
-.hero-grid {
-  background-image: linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
-}
-
 .glow {
   background: radial-gradient(closest-side, var(--accent) 0%, transparent 100%);
   filter: blur(80px);

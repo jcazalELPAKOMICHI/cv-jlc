@@ -8,6 +8,7 @@ import { usePortfolioContent } from "@/presentation/providers/locale-provider";
 import { trackEvent } from "@/infrastructure/analytics/firebase-client";
 import { Container } from "@/presentation/components/ui/container";
 import { Button } from "@/presentation/components/ui/button";
+import { TechBackdrop } from "@/presentation/components/ui/tech-backdrop";
 
 export function Hero() {
   const { content, locale } = usePortfolioContent();
@@ -25,12 +26,12 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-20">
-      <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden />
+    <section id="hero" className="relative flex min-h-[86vh] items-center overflow-hidden pt-24 pb-16">
+      <TechBackdrop />
       <div className="glow pointer-events-none absolute left-1/2 top-0 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/3" aria-hidden />
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-40" aria-hidden />
 
-      <Container className="relative grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
+      <Container className="relative grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -96,7 +97,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.25, ease: "easeOut" }}
-            className="mt-14 grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4"
+            className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4"
           >
             {profile.stats.map((stat) => (
               <div key={stat.label}>
