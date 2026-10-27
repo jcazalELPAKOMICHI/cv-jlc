@@ -61,6 +61,29 @@ export const enContent: PortfolioContent = {
             "Implemented Dark Mode and a special \"Albirroja\" mode in the Eko application.",
           ],
         },
+        {
+          label: "eko web & in-house SDKs — business focus",
+          items: [
+            "Drove eko web for eko negocios: a Next.js web banking app that lets merchants collect QR payments from the checkout PC or tablet without relying on the owner's phone, and hand their sales Excel to their accountant. It reuses the bank's existing services: no need to build another bank, just open a new door.",
+            "Designed eko web to boost the app, not replace it: product sign-ups (loans, cards, aliases) stay in the app, the web drives traffic to it, and the Micro loan offer shows up right when merchants are looking at their sales.",
+            "Built the business case for the board: an 8-week pilot proposal with Micro merchants, demo script, objections by department and a measurement plan. Along the way I uncovered measurement gaps in the current app (payments counted twice and key events not tracked).",
+            "Built id_document_scanner, an in-house open-source SDK (published on pub.dev) to capture and validate the Paraguayan ID card during onboarding. The backend only receives the validated crop, the SDK rejects non-ID documents and photos of screens or photocopies, and it works without Google or third-party services, Huawei included.",
+            "Built marvin_trust, Eko's internal device-integrity SDK, to stop relying on third-party libraries for root, jailbreak, emulator and hooking detection. This gives the company control over the balance between banking-grade security and false positives.",
+            "Stabilized marvin_trust in production: removed a splash-screen hang by moving scans to the background and reduced false positives on Xiaomi, OPPO, Samsung, LG and Motorola devices without lowering the security bar.",
+          ],
+        },
+        {
+          label: "How I used AI to get there",
+          items: [
+            "Used Claude Code as a team multiplier: in five days I took eko web from zero to a demo-ready MVP with 147 tests, lint and typecheck passing.",
+            "Delegated cross-platform translation work to AI: porting API contracts, cryptography and QR payment flows from the Flutter app to Next.js, keeping the same Clean Architecture, feature flags and analytics events.",
+            "Used AI to document and harden: a security guide (Next.js as a BFF, strict CSP, secure sessions, a checklist for Infrastructure, Backend and Compliance), an architecture README and a CLAUDE.md with rules so developers and agents can maintain the code.",
+            "Took id_document_scanner from idea to pub.dev in one day with AI: design, custom MRZ OCR, anti-fraud, 68 tests, docs with screenshots generated from the real widgets, and a GitHub Actions release pipeline with no tokens in the repo.",
+            "Relied on AI to build and harden marvin_trust in Kotlin/C++ and Swift, and to diagnose and fix the issues that surfaced in production (a startup hang and manufacturer-specific false positives).",
+            "Also used AI on the business side: preparing the board presentation with questions per manager, objections and the ask, and reviewing large PRs to catch unnecessary binaries and security risks before they reached production.",
+            "Always worked with mock data and public specimens: no real customer data ever went through AI.",
+          ],
+        },
       ],
     },
     {
@@ -164,6 +187,36 @@ export const enContent: PortfolioContent = {
       featured: true,
     },
     {
+      id: "eko-web",
+      title: "eko web — Web banking for eko negocios",
+      context: "Ética — Pilot MVP",
+      period: "2026",
+      description:
+        "Web banking that lets Micro merchants collect QR payments from the checkout, review sales and export to Excel without relying on the owner's phone. Next.js as a BFF over the same services as the app, with banking-grade security and the same architecture, feature flags and analytics as Flutter. Built with Claude Code in five days and presented to the board as a pilot proposal.",
+      tags: ["Next.js", "React", "TypeScript", "BFF", "Claude Code"],
+      featured: true,
+    },
+    {
+      id: "id-document-scanner",
+      title: "id_document_scanner — Paraguayan ID SDK",
+      context: "Open source — pub.dev",
+      period: "2026",
+      description:
+        "Flutter SDK to capture and validate the ID card during onboarding: customizable overlay, perspective-corrected crop, custom MRZ OCR and detection of photos of screens or photocopies. No ML Kit or cloud services, Huawei compatible. From idea to pub.dev in one day with AI, with automated release CI/CD.",
+      tags: ["Flutter", "Dart", "OCR", "KYC", "Claude Code"],
+      featured: true,
+    },
+    {
+      id: "marvin-trust",
+      title: "marvin_trust — Device integrity SDK",
+      context: "Ética — Eko internal SDK",
+      period: "2026",
+      description:
+        "In-house Flutter plugin that detects root, jailbreak, emulators and hooking without third-party SDKs. It starts from an open-source base and hardens it with native Kotlin/C++ and Swift layers, a multi-signal trustScore and signed results the server can verify. In production I removed a startup hang and reduced false positives across the main Android manufacturers. Built with AI assistance.",
+      tags: ["Flutter", "Kotlin", "C++", "Swift", "Security", "Claude Code"],
+      featured: true,
+    },
+    {
       id: "banco-familiar",
       title: "Banco Familiar — Business Banking",
       context: "Ética",
@@ -242,6 +295,7 @@ export const enContent: PortfolioContent = {
     { category: "DevOps & tools", items: ["Codemagic", "GitHub Actions", "Bitbucket Pipelines", "Git", "Jira", "Xcode"] },
     { category: "Databases", items: ["MySQL", "PostgreSQL", "Firebird SQL"] },
     { category: "Observability & analytics", items: ["Firebase Analytics", "Google Analytics", "Instana Agent"] },
+    { category: "AI-assisted development", items: ["Claude Code", "AI agents (CLAUDE.md)", "AI code review", "Next.js"] },
   ],
   education: [
     {

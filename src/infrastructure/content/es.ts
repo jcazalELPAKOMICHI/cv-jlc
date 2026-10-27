@@ -62,6 +62,29 @@ export const esContent: PortfolioContent = {
             "Implementé Dark Mode y el modo especial \"Albirroja\" en la aplicación Eko.",
           ],
         },
+        {
+          label: "eko web y SDKs propios — enfoque de negocio",
+          items: [
+            "Impulsé eko web para eko negocios: una banca web en Next.js para que el comercio cobre con QR desde la PC o tablet de la caja, sin depender del celular del dueño, y le entregue el Excel de ventas a su contador. Reutiliza los servicios existentes del banco: no hace falta construir otro banco, solo abrir una nueva puerta.",
+            "Diseñé eko web para potenciar la app, no para reemplazarla: lo que se contrata (préstamos, tarjetas, alias) sigue en la app, la web le deriva tráfico y muestra la oferta de préstamo Micro justo cuando el comercio mira sus ventas.",
+            "Armé el caso de negocio para el directorio: propuesta de piloto de 8 semanas con comercios Micro, guion de demo, objeciones por área y plan de medición. En el camino detecté brechas de medición en la app actual (cobros contados dos veces y eventos clave sin registrar).",
+            "Desarrollé id_document_scanner, un SDK propio y open source (publicado en pub.dev) para capturar y validar la cédula paraguaya en el onboarding. El backend recibe solo el recorte validado, el SDK rechaza documentos que no son cédulas y fotos de pantallas o fotocopias, y funciona sin servicios de Google ni de terceros, también en Huawei.",
+            "Construí marvin_trust, el SDK interno de integridad del dispositivo de Eko, para dejar de depender de librerías de terceros en la detección de root, jailbreak, emuladores y hooking. Así la empresa controla el equilibrio entre seguridad bancaria y falsos positivos.",
+            "Estabilicé marvin_trust en producción: eliminé un cuelgue en el splash moviendo el escaneo a segundo plano y reduje falsos positivos en equipos Xiaomi, OPPO, Samsung, LG y Motorola, sin bajar el nivel de seguridad.",
+          ],
+        },
+        {
+          label: "Cómo usé la IA para lograrlo",
+          items: [
+            "Usé Claude Code como multiplicador del equipo: en cinco días llevé eko web de cero a un MVP demostrable con 147 tests, lint y typecheck en verde.",
+            "Le delegué a la IA el trabajo de traducción entre plataformas: portar los contratos de API, la criptografía y los flujos de cobro QR desde la app Flutter a Next.js, manteniendo la misma Clean Architecture, feature flags y eventos de analítica.",
+            "Usé la IA para documentar y blindar: guía de seguridad (Next.js como BFF, CSP estricta, sesiones seguras, checklist para Infraestructura, Backend y Cumplimiento), README de arquitectura y un CLAUDE.md con reglas para que devs y agentes mantengan el código.",
+            "Llevé id_document_scanner de la idea a pub.dev en un día con IA: diseño, OCR propio de la MRZ, antifraude, 68 tests, documentación con capturas generadas desde los widgets reales y CI/CD de publicación con GitHub Actions sin tokens en el repo.",
+            "Me apoyé en la IA para construir y endurecer marvin_trust en Kotlin/C++ y Swift, y para diagnosticar y corregir los problemas que aparecieron en producción (cuelgue de arranque y falsos positivos por fabricante).",
+            "Usé la IA también para el lado de negocio: preparar la presentación al directorio con preguntas por gerente, objeciones y qué pedir, y para revisar PRs grandes detectando binarios innecesarios y riesgos de seguridad antes de llegar a producción.",
+            "Trabajé siempre con datos ficticios y especímenes públicos: ningún dato real de clientes pasó por la IA.",
+          ],
+        },
       ],
     },
     {
@@ -165,6 +188,36 @@ export const esContent: PortfolioContent = {
       featured: true,
     },
     {
+      id: "eko-web",
+      title: "eko web — Banca web para eko negocios",
+      context: "Ética — MVP para piloto",
+      period: "2026",
+      description:
+        "Banca web para que los comercios Micro cobren con QR desde la caja, consulten ventas y exporten a Excel sin depender del celular del dueño. Next.js como BFF sobre los mismos servicios de la app, con seguridad de nivel bancario y la misma arquitectura, feature flags y analítica que Flutter. Construida con Claude Code en cinco días y presentada al directorio como propuesta de piloto.",
+      tags: ["Next.js", "React", "TypeScript", "BFF", "Claude Code"],
+      featured: true,
+    },
+    {
+      id: "id-document-scanner",
+      title: "id_document_scanner — SDK de cédula paraguaya",
+      context: "Open source — pub.dev",
+      period: "2026",
+      description:
+        "SDK Flutter para capturar y validar la cédula en el onboarding: overlay personalizable, recorte con corrección de perspectiva, OCR propio de la MRZ y detección de fotos de pantallas o fotocopias. Sin ML Kit ni servicios cloud, compatible con Huawei. De la idea a pub.dev en un día con IA, con CI/CD de publicación automática.",
+      tags: ["Flutter", "Dart", "OCR", "KYC", "Claude Code"],
+      featured: true,
+    },
+    {
+      id: "marvin-trust",
+      title: "marvin_trust — SDK de integridad del dispositivo",
+      context: "Ética — SDK interno de Eko",
+      period: "2026",
+      description:
+        "Plugin Flutter propio para detectar root, jailbreak, emuladores y hooking sin depender de SDKs de terceros. Parte de una base open source y la endurece con capas nativas en Kotlin/C++ y Swift, un trustScore multiseñal y resultados firmados que el servidor puede verificar. En producción eliminé un cuelgue de arranque y reduje falsos positivos en los principales fabricantes Android. Desarrollado con apoyo de IA.",
+      tags: ["Flutter", "Kotlin", "C++", "Swift", "Seguridad", "Claude Code"],
+      featured: true,
+    },
+    {
       id: "banco-familiar",
       title: "Banco Familiar — Banca Empresas",
       context: "Ética",
@@ -243,6 +296,7 @@ export const esContent: PortfolioContent = {
     { category: "DevOps y herramientas", items: ["Codemagic", "GitHub Actions", "Bitbucket Pipelines", "Git", "Jira", "Xcode"] },
     { category: "Bases de datos", items: ["MySQL", "PostgreSQL", "Firebird SQL"] },
     { category: "Observabilidad y analítica", items: ["Firebase Analytics", "Google Analytics", "Instana Agent"] },
+    { category: "Desarrollo con IA", items: ["Claude Code", "Agentes de IA (CLAUDE.md)", "Code review con IA", "Next.js"] },
   ],
   education: [
     {
